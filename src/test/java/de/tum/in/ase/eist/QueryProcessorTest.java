@@ -34,7 +34,15 @@ class QueryProcessorTest {
 	@Test
 	void testCanAdd() {
 		String actual = queryProcessor.process("what is 12 plus 23");
-		System.out.println(actual);
+		if(!actual.equals("35")) {
+			fail("addition is wrong");
+		}
+	}
+
+	@Test
+	void testFindLargestNumber() {
+		String actual = queryProcessor.process("fbe5b3e0: which of the following numbers is the largest: 360, 92, 37, 169");
+		assertEquals("360", actual);
 	}
 
 }
