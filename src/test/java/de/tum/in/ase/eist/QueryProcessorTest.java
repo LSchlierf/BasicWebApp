@@ -30,4 +30,11 @@ class QueryProcessorTest {
 		}
 	}
 
+
+	@Test
+	void testCanAdd() {
+		String actual = queryProcessor.process("what is 12 plus 23");
+		System.out.println(actual);
+	}
+
 }
