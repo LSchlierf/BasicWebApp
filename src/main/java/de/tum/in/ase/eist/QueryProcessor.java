@@ -36,6 +36,12 @@ public class QueryProcessor {
                 }
                 int max = Arrays.stream(numbersArr).mapToInt(Integer::parseInt).max().getAsInt();
                 return Integer.toString(max);
+            } else if (query.contains("multiplied")) {
+                String firstOpStr = query.substring(query.indexOf("what is ") + 8);
+                String secondOpStr = firstOpStr.substring(firstOpStr.indexOf("by ") + 3);
+                firstOpStr = firstOpStr.substring(0, firstOpStr.indexOf(" "));
+
+                return Integer.toString(Integer.parseInt(firstOpStr) * Integer.parseInt(secondOpStr));
             }
             return "";
         }

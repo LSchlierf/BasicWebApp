@@ -45,4 +45,10 @@ class QueryProcessorTest {
 		assertEquals("360", actual);
 	}
 
+	@Test
+	void testCanMultiply() {
+		String actual = queryProcessor.process("3775a920: what is 13 multiplied by 17");
+		assertEquals("221", actual);
+	}
+
 }
