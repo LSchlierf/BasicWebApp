@@ -15,7 +15,7 @@ public class QueryProcessor {
            return "Lucas";
         } else {
             if(query.contains("plus")) {
-                String firstOpStr = query.substring(8);
+                String firstOpStr = query.substring(query.indexOf("what is") + 8);
                 String secondOpStr = firstOpStr.substring(firstOpStr.indexOf("plus "));
                 firstOpStr = firstOpStr.substring(0, firstOpStr.indexOf(" "));
                 secondOpStr = secondOpStr.substring(5);
@@ -26,6 +26,8 @@ public class QueryProcessor {
                 Integer result = one + two;
 
                 return result.toString();
+            } else if (query.contains("largest")) {
+                String numbers = query.substring(query.indexOf(":") + 2);
             }
             return "";
         }
